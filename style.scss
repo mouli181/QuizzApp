@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+
+$purple: #799df1;
+$light-blue: #60c1ec;
+$green: #7bd9de;
+$pink: #cfb0d2;
+
+$text: white;
+$background: linear-gradient(
+  60deg,
+  $purple,
+  $light-blue 30%,
+  $green 60%,
+  $pink 90%
+);
+$black: #000038;
+
+html {
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: $text;
+  background: $background;
+  background-size: 100% 100%;
+  overflow: hidden;
+  font-family: "Major Mono Display", monospace;
+}
+
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  color: $black;
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__start {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 35vh;
+    background: $background;
+    transition: transform 1s ease;
+    cursor: pointer;
+    &:after {
+      content: "";
+      position: absolute;
+      top: calc(50% - 10vh);
+      left: calc(50% - 6.5vh);
+      border-top: 13vh solid transparent;
+      border-bottom: 13vh solid transparent;
+      border-left: 20vh solid $black;
+      pointer-events: none;
+      transition: transform 1s ease;
+    }
+    &:hover {
+      transform: scale(1.1);
+      &:after {
+        transform: scale(1.2);
+      }
+    }
+    @media (max-width: 767px) {
+      font-size: 30vw;
+      &:after {
+        top: calc(50% - 10vw);
+        left: calc(50% - 6.5vw);
+        border-top: 13vw solid transparent;
+        border-bottom: 13vw solid transparent;
+        border-left: 20vw solid $black;
+      }
+    }
+  }
+  &__logo {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.5rem;
+    color: $text;
+  }
+  &__title-wrapper {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+  }
+  &__title {
+    color: $text;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem;
+  }
+  &__pattern {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-align: right;
+    width: 12rem;
+    padding: 1rem;
+  }
+  &__pattern-text {
+    width: 100%;
+    margin-top: 1rem;
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+  &__score {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    font-size: 2rem;
+    color: $text;
+  }
+}
+
+.tile {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  margin: 0.5rem;
+  font-size: 4rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.2) rotate(-10deg);
+    z-index: 1;
+    box-shadow: -0.2rem 0.5rem 0.5rem 0 rgba($black, 0.5);
+  }
+}

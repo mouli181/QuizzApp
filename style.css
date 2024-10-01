@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@media (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
+  background: linear-gradient(60deg, #799df1, #60c1ec 30%, #7bd9de 60%, #cfb0d2 90%);
+  background-size: 100% 100%;
+  overflow: hidden;
+  font-family: "Major Mono Display", monospace;
+}
+
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  color: #000038;
+}
+.game__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.game__start {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 35vh;
+  background: linear-gradient(60deg, #799df1, #60c1ec 30%, #7bd9de 60%, #cfb0d2 90%);
+  transition: transform 1s ease;
+  cursor: pointer;
+}
+.game__start:after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 10vh);
+  left: calc(50% - 6.5vh);
+  border-top: 13vh solid transparent;
+  border-bottom: 13vh solid transparent;
+  border-left: 20vh solid #000038;
+  pointer-events: none;
+  transition: transform 1s ease;
+}
+.game__start:hover {
+  transform: scale(1.1);
+}
+.game__start:hover:after {
+  transform: scale(1.2);
+}
+@media (max-width: 767px) {
+  .game__start {
+    font-size: 30vw;
+  }
+  .game__start:after {
+    top: calc(50% - 10vw);
+    left: calc(50% - 6.5vw);
+    border-top: 13vw solid transparent;
+    border-bottom: 13vw solid transparent;
+    border-left: 20vw solid #000038;
+  }
+}
+.game__logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.5rem;
+  color: white;
+}
+.game__title-wrapper {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+}
+.game__title {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem;
+}
+.game__pattern {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-align: right;
+  width: 12rem;
+  padding: 1rem;
+}
+.game__pattern-text {
+  width: 100%;
+  margin-top: 1rem;
+  line-height: 1.2;
+  word-wrap: break-word;
+}
+.game__score {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 2rem;
+  color: white;
+}
+
+.tile {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  margin: 0.5rem;
+  font-size: 4rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.tile:hover {
+  transform: scale(1.2) rotate(-10deg);
+  z-index: 1;
+  box-shadow: -0.2rem 0.5rem 0.5rem 0 rgba(0, 0, 56, 0.5);
+}/*# sourceMappingURL=style.css.map */
